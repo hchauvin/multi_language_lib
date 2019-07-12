@@ -1,19 +1,22 @@
 set -x
 set -e
 
+mkdir -p build
+cd build
+
 which cmake
 which conan
 
-conan install src/lib --build=outdated
+conan install ../src/lib --build=outdated
 
-cmake . -G "Unix Makefiles" \
+cmake .. -G "Unix Makefiles" \
   -DCMAKE_BUILD_TYPE=Debug \
   -DCMAKE_INSTALL_PREFIX=_install \
   -DCMAKE_SHARED_LIBRARY_PREFIX_CXX=""
-cmake --build . --target install
+cmake --build .. --target install
 
 # Linux
-cp _install/dynlib/dynlib.so src/example.so || echo "Failed: dynlib.so -> src"
+cp _install/dynlib/dynlib.so ../src/example.so || echo "Failed: dynlib.so -> src"
 
 # Mac
-cp _install/dynlib/dynlib.dylib src/example.so || echo "Failed: dynlib.dylib -> src"
+cp _install/dynlib/dynlib.dylib ../src/example.so || echo "Failed: dynlib.dylib -> src"

@@ -25,7 +25,6 @@ build/
 /third_party
 /CMakeFiles
 conanbuildinfo.*
-Makefile
 CMakeCache.txt
 cmake_install.cmake
 bin

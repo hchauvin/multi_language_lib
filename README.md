@@ -48,16 +48,15 @@ Commands:
 ```bash
 cd cpp
 
-brew install boost-python
+mkdir -p build
+cd build
 
-# TODO: Add third party not published to conan central.
-
-conan install . --build=outdated
-cmake . -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
-cmake --build . --target test
+conan install .. --build=outdated
+cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+cmake --build .. --target test
 bin/test
 
-cd ../R
+cd ../../R
 
 R -e "Rcpp::compileAttributes()"
 

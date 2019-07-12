@@ -3,7 +3,7 @@ project(Example)
 
 add_definitions("-std=c++17 -Werror -Wno-error=delete-incomplete")
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/conanbuildinfo.cmake)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 file(GLOB_RECURSE EXAMPLE_SOURCES "${CMAKE_CURRENT_LIST_DIR}/example/*.cc")
