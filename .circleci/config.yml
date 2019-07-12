@@ -35,6 +35,7 @@ jobs:
           name: R
           command: |
             cd R
+            R -e "install.packages('devtools')"
             R -e "devtools::load_all(); example::str_split('hello world')"
             R -e "devtools::test()"
       - run:
