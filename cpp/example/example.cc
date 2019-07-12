@@ -12,8 +12,9 @@
 namespace example {
 
 std::vector<std::string> split(std::string s) {
-  std::vector<std::string> ans();
+  std::vector<std::string> ans;
   boost::split(ans, s, boost::is_any_of("\t "));
+  return ans;
 }
 
-} // example
+}  // namespace example

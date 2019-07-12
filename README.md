@@ -7,9 +7,10 @@ a lot by the R users? Also, CRAN, Conan and Conda compatibility layer?
 
 TODO:
 
-- Test and finalize C++
+- / Test and finalize C++
 - Implement CI/CD
-- Implement linkage for R
+- / Implement linkage for R
+- Try this on Windows
 - Implement CI/CD for C++
 - Evaluate how to do linkage with Python
 - Implement linkage for Python
@@ -36,3 +37,30 @@ TODO:
   So that's probably the most portable language. You cannot say so with Java.
 
 In general, it is about writing C++-first code.
+
+Commands:
+
+```bash
+cd cpp
+
+# TODO: Add third party not published to conan central.
+
+conan install . --build=outdated
+cmake . -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+cmake --build . --target test
+bin/test
+
+cd ../R
+
+R -e "Rcpp::compileAttributes()"
+
+# R -e "devtools::load_all()"
+
+# R CMD build .
+# R CMD check .
+# R CMD INSTALL .
+
+R -e "devtools::check()"
+
+R -e "devtools::test()"
+```

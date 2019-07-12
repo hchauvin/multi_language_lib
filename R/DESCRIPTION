@@ -1,6 +1,8 @@
 Package: example
 Title: Example R package
 Version: 0.99.0
+Author: Hadrien Chauvin <hadrien@chauvin.io>
+Maintainer: Hadrien Chauvin <hadrien@chauvin.io>
 Authors@R: c(
     person("Hadrien", "Chauvin", email = "hadrien@chauvin.io", role = c("aut", "cre"))
   )
@@ -16,6 +18,6 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/hchauvin/multi_language_lib
 BugReports: https://github.com/hchauvin/multi_language_lib/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1
 LinkingTo: Rcpp
 Suggests: testthat

@@ -10,6 +10,4 @@
 #include "example/example.hpp"
 
 // [[Rcpp::export]]
-std::vector<std::string> split(std::string s) {
-  return example::split(s);
-}
+std::vector<std::string> str_split(std::string s) { return example::split(s); }

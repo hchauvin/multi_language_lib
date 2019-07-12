@@ -12,7 +12,8 @@
 namespace example::tests {
 
 TEST_CASE("example::split splits a string") {
-  REQUIRE(split("foo\tbar qux")  == {"foo", "bar", "qux"});
+  std::vector<std::string> expected{"foo", "bar", "qux"};
+  REQUIRE(split("foo\tbar qux") == expected);
 }
 
 }  // namespace example::tests

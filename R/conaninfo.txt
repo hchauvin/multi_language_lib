@@ -1,0 +1,80 @@
+[settings]
+    arch=x86_64
+    build_type=Release
+    compiler=apple-clang
+    compiler.libcxx=libc++
+    compiler.version=10.0
+    os=Macos
+
+[requires]
+    boost/1.Y.Z
+    catch2/2.Y.Z
+    vscodepropertiesgen/0.1
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Release
+    compiler=apple-clang
+    compiler.libcxx=libc++
+    compiler.version=10.0
+    os=Macos
+    os_build=Macos
+
+[full_requires]
+    boost/1.67.0@conan/stable:411d816e9b8d6cb0bb1ef6e5be8b2a94b8b17c04
+    bzip2/1.0.6@conan/stable:534dcc368c999e07e81f146b3466b8f656ef1f55
+    catch2/2.4.2@bincrafters/stable:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
+    vscodepropertiesgen/0.1@mkovalchik/stable:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
+    zlib/1.2.11@conan/stable:534dcc368c999e07e81f146b3466b8f656ef1f55
+
+[full_options]
+    boost:fPIC=True
+    boost:header_only=False
+    boost:magic_autolink=False
+    boost:shared=False
+    boost:skip_lib_rename=False
+    boost:without_atomic=False
+    boost:without_chrono=False
+    boost:without_container=False
+    boost:without_context=False
+    boost:without_contract=False
+    boost:without_coroutine=False
+    boost:without_date_time=False
+    boost:without_exception=False
+    boost:without_fiber=False
+    boost:without_filesystem=False
+    boost:without_graph=False
+    boost:without_graph_parallel=False
+    boost:without_iostreams=False
+    boost:without_locale=False
+    boost:without_log=False
+    boost:without_math=False
+    boost:without_mpi=False
+    boost:without_program_options=False
+    boost:without_python=True
+    boost:without_random=False
+    boost:without_regex=False
+    boost:without_serialization=False
+    boost:without_signals=False
+    boost:without_stacktrace=False
+    boost:without_system=False
+    boost:without_test=False
+    boost:without_thread=False
+    boost:without_timer=False
+    boost:without_type_erasure=False
+    boost:without_wave=False
+    bzip2:fPIC=True
+    bzip2:shared=False
+    zlib:fPIC=True
+    zlib:minizip=False
+    zlib:shared=False
+
+[recipe_hash]
+
+
+[env]
+
