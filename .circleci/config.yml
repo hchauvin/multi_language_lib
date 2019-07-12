@@ -10,7 +10,7 @@ jobs:
           command: |
             sudo pip install --upgrade conan
             sudo apt-get update
-            sudo apt-get install r-base
+            sudo apt-get install -y r-base
       - run:
           name: Third Party
           command: |
