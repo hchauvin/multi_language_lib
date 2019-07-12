@@ -18,5 +18,8 @@ TODO:
 - Implement notebooks
 - Readme instructions
 - OSS
+- Maybe add support for scala and intercompatibility with scala, to show how
+  JVM models can be implemented as well.
+- Write an article to show how to build a continuum like that.
 
 In general, it is about writing C++-first code.
