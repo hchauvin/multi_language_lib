@@ -10,6 +10,15 @@ jobs:
           command: |
             sudo pip install --upgrade conan
       - run:
+          name: Third Party
+          command: |
+            mkdir -p third_party
+            cd third_party
+            rm -rf conan-vscodepropertiesgen
+            git clone https://github.com/mkovalchik/conan-vscodepropertiesgen.git
+            cd conan-vscodepropertiesgen
+            conan export . vscodepropertiesgen/0.1@mkovalchik/stable
+      - run:
           name: C++
           command: |
             cd cpp
