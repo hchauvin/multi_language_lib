@@ -1,0 +1,21 @@
+Package: example
+Title: Example R package
+Version: 0.99.0
+Authors@R: c(
+    person("Hadrien", "Chauvin", email = "hadrien@chauvin.io", role = c("aut", "cre"))
+  )
+Date: 2019
+Description: Example R package.
+Depends:
+  R (>= 3.3.2)
+Imports:
+  Rcpp (>= 0.12.9)
+SystemRequirements: conan, cmake
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/hchauvin/multi_language_lib
+BugReports: https://github.com/hchauvin/multi_language_lib/issues
+RoxygenNote: 5.0.1
+LinkingTo: Rcpp
+Suggests: testthat
