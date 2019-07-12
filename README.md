@@ -9,14 +9,17 @@ TODO:
 
 - / Test and finalize C++
 - Implement CI/CD
-- / Implement linkage for R
-- Try this on Windows
-- Implement CI/CD for C++
-- Evaluate how to do linkage with Python
-- Implement linkage for Python
-- Evaluate how to do linkage with Julia
-- Implement linkage with Julia
+- / Evaluate how to do linkage with Python
+- / Implement linkage for Python
 - Implement notebooks
+- / Implement linkage for R
+- Have dependent conanfile.txt to avoid loading boost::python in cpp
+- Isolate "cpp" and make it main, with a "bindings" folder where the R and python code live.
+- / Check python with a test package. How to use pip test packages, this sort of things, with python???
+  I'm familiar with R's package management, not with Python's.
+- If conan not available, install conan
+- (Try this on Windows)
+- Implement CI/CD for C++
 - Readme instructions
 - OSS
 - Maybe add support for scala and intercompatibility with scala, to show how
@@ -35,6 +38,8 @@ TODO:
   You end up having to write microservices, etc. instead of going native in the beginning.
   Notice that you can actually run C++ anywhere: on iPhones, on Androids, in embedded systems, ...
   So that's probably the most portable language. You cannot say so with Java.
+- Call the C++ unittests within the R and python packages.
+- Package with conda as well.
 
 In general, it is about writing C++-first code.
 
@@ -42,6 +47,8 @@ Commands:
 
 ```bash
 cd cpp
+
+brew install boost-python
 
 # TODO: Add third party not published to conan central.
 
@@ -63,4 +70,6 @@ R -e "devtools::load_all(); example::str_split('hello world')"
 R -e "devtools::check()"
 
 R -e "devtools::test()"
+
+conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
 ```
