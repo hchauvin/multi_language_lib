@@ -18,17 +18,17 @@ jobs:
             git clone https://github.com/mkovalchik/conan-vscodepropertiesgen.git
             cd conan-vscodepropertiesgen
             conan export . vscodepropertiesgen/0.1@mkovalchik/stable
-      - run:
-          name: C++
-          command: |
-            cd cpp
-            mkdir -p build
-            cd build
+      # - run:
+      #     name: C++
+      #     command: |
+      #       cd cpp
+      #       mkdir -p build
+      #       cd build
 
-            conan install .. --build=outdated
-            cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
-            cmake --build .. --target test
-            bin/test
+      #       conan install .. --build=outdated
+      #       cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+      #       cmake --build .. --target test
+      #       bin/test
       - run:
           name: R
           command: |
