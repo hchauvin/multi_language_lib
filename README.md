@@ -26,5 +26,13 @@ TODO:
   using R, which comes with lots of issues, or re-writing your stuff again. C++ being
   the lingua franca of numerical computing, it makes sense to have a C++-first
   development mentality.
+- This can be even expanded by providing access to R, in the code, that can work if
+  called outside of R, e.g. in python. Similar for Python. This way, C++ can be
+  used to smooth transition in a numerical computing system that is multi-language.
+  But it is a shame that a library such as nltk is available in python first. What
+  if I want to write stuff in R without going multi-language? This sort of things?
+  You end up having to write microservices, etc. instead of going native in the beginning.
+  Notice that you can actually run C++ anywhere: on iPhones, on Androids, in embedded systems, ...
+  So that's probably the most portable language. You cannot say so with Java.
 
 In general, it is about writing C++-first code.
