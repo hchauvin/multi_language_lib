@@ -54,7 +54,7 @@ cd ../R
 
 R -e "Rcpp::compileAttributes()"
 
-# R -e "devtools::load_all()"
+R -e "devtools::load_all(); example::str_split('hello world')"
 
 # R CMD build .
 # R CMD check .

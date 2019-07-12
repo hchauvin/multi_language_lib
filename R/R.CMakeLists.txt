@@ -22,30 +22,22 @@ execute_process(
     OUTPUT_STRIP_TRAILING_WHITESPACE
     OUTPUT_VARIABLE RBLAS
 )
+separate_arguments(RBLAS)
 execute_process(
     COMMAND bash "-c" "${R_HOME}/bin/R CMD config LAPACK_LIBS"
     OUTPUT_STRIP_TRAILING_WHITESPACE
     OUTPUT_VARIABLE RLAPACK
 )
+separate_arguments(RLAPACK)
 execute_process(
     COMMAND bash "-c" "echo 'Rcpp:::CxxFlags()' | ${R_HOME}/bin/R --vanilla --slave"
     OUTPUT_STRIP_TRAILING_WHITESPACE
     OUTPUT_VARIABLE RCPPINCL
 )
+separate_arguments(RCPPINCL)
 execute_process(
     COMMAND bash "-c" "echo 'Rcpp:::LdFlags()' | ${R_HOME}/bin/R --vanilla --slave"
     OUTPUT_STRIP_TRAILING_WHITESPACE
     OUTPUT_VARIABLE RCPPLIBS
 )
-execute_process(
-    COMMAND bash "-c" "echo 'RInside:::CxxFlags()' | ${R_HOME}/bin/R --vanilla --slave"
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-    OUTPUT_VARIABLE RINSIDEINCL
-)
-execute_process(
-    COMMAND bash "-c" "echo 'RInside:::LdFlags()' | ${R_HOME}/bin/R --vanilla --slave"
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-    OUTPUT_VARIABLE RINSIDELIBS
-)
-# SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${RCPPFLAGS}")
-# Instead of ${RLDFLAGS}:
+separate_arguments(RCPPLIBS)
