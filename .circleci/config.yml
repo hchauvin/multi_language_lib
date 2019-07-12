@@ -9,6 +9,7 @@ jobs:
           name: Build Conan package
           command: |
             sudo pip install --upgrade conan
+            sudo apt-get update
             sudo apt-get install r-base
       - run:
           name: Third Party
