@@ -2,7 +2,7 @@ version: 2
 jobs:
   gcc-6:
     docker:
-      - image: clang8-x86
+      - image: conanio/clang8-x86
     # TODO: Add cache
     steps:
       - checkout
