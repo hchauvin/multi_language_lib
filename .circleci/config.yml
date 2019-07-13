@@ -34,7 +34,7 @@ jobs:
           name: R
           command: |
             sudo apt-get update # ttt
-            sudo DEBIAN_FRONTEND=noninteractive sudo apt-get install -y r-base libxml2-dev libcurl4-openssl-dev
+            sudo bash -c "DEBIAN_FRONTEND=noninteractive apt-get install -y r-base libxml2-dev libcurl4-openssl-dev"
             cd R
             # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
             sudo R -e "install.packages('devtools', repos = 'http://cran.us.r-project.org')"
