@@ -4,12 +4,9 @@ set -e
 mkdir -p build
 cd build
 
-which cmake
-which conan
-
 conan install ../src/lib --build=outdated
 
-cmake .. -G "Unix Makefiles" \
+cmake .. \
   -DCMAKE_BUILD_TYPE=Debug \
   -DCMAKE_INSTALL_PREFIX=_install \
   -DCMAKE_SHARED_LIBRARY_PREFIX_CXX=""
