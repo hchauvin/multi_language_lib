@@ -39,8 +39,7 @@ jobs:
             cd R
             # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
             sudo R -e "install.packages('devtools', repos = 'http://cran.us.r-project.org')"
-            export PATH=$(dirname $(which conan)):$PATH
-            sudo R -e "devtools::load_all(); example::str_split('hello world')"
+            sudo bash -c "PATH=$(dirname $(which conan)):$PATH R -e \"devtools::load_all(); example::str_split('hello world')\""
             R -e "devtools::test()"
       - run:
           name: Python
