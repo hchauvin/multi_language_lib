@@ -40,6 +40,7 @@ TODO:
   So that's probably the most portable language. You cannot say so with Java.
 - Call the C++ unittests within the R and python packages.
 - Package with conda as well.
+- Documentation, mock publication workflow.
 
 In general, it is about writing C++-first code.
 
