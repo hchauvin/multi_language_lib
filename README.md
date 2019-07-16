@@ -8,13 +8,13 @@ a lot by the R users? Also, CRAN, Conan and Conda compatibility layer?
 TODO:
 
 - / Test and finalize C++
-- Implement CI/CD
+- / Implement CI/CD
 - / Evaluate how to do linkage with Python
 - / Implement linkage for Python
-- Implement notebooks
+- / Implement notebooks
 - / Implement linkage for R
 - / Have dependent conanfile.txt to avoid loading boost::python in cpp
-- Isolate "cpp" and make it main, with a "bindings" folder where the R and python code live.
+- (Isolate "cpp" and make it main, with a "bindings" folder where the R and python code live.)
 - / Check python with a test package. How to use pip test packages, this sort of things, with python???
   I'm familiar with R's package management, not with Python's.
 - / If conan not available, install conan
