@@ -35,7 +35,8 @@ jobs:
           name: test_package
           command: |
             cd cpp
-            conan test_package example/0.1.0@hchauvin/test
+            conan create . hchauvin/test
+            conan test test_package example/0.1.0@hchauvin/test
   R:
     <<: *defaults
     steps:

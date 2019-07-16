@@ -1,4 +1,3 @@
-import os
 from conans import ConanFile, CMake
 
 
@@ -22,7 +21,7 @@ class ExampleConan(ConanFile):
     def build(self):
         cmake = CMake(self)
         cmake.configure()
-        cmake.build()
+        cmake.build(target="example")
 
     def package(self):
         self.copy("*.hpp", dst="include")

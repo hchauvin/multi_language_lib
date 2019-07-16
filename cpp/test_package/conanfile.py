@@ -8,10 +8,10 @@ class ExampleTestConan(ConanFile):
     generators = "cmake"
 
     def build(self):
-        cmake = CMake(self)
-        cmake.configure()
-        cmake.build()
+        self.cmake = CMake(self)
+        self.cmake.configure()
+        self.cmake.build()
 
     def test(self):
-        self.cmake.build(target="test")
+        self.cmake.build(target="main")
         self.run(os.path.join(".", "bin", "main"))
