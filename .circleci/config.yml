@@ -2,14 +2,13 @@ version: 2
 jobs:
   python:
     docker:
-      - image: python:3.8.0b2-buster # hchauvin/multi-language-lib-build-env
+      - image: hchauvin/multi-language-lib-build-env
     # TODO: Add cache
     steps:
       - checkout
       - run:
           name: Third Party
           command: |
-            pip3 install --upgrade conan
             mkdir -p third_party
             cd third_party
             rm -rf conan-vscodepropertiesgen
