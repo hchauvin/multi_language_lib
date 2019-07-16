@@ -1,48 +1,63 @@
 version: 2
 
+defaults: &defaults
+  docker:
+    - image: hchauvin/multi-language-lib-build-env
+
+third_party: &third_party
+  name: Third Party
+  command: |
+    mkdir -p third_party
+    cd third_party
+    rm -rf conan-vscodepropertiesgen
+    git clone https://github.com/mkovalchik/conan-vscodepropertiesgen.git
+    cd conan-vscodepropertiesgen
+    conan export . vscodepropertiesgen/0.1@mkovalchik/stable
+
 jobs:
-  python:
-    docker:
-      - image: hchauvin/multi-language-lib-build-env
-    # TODO: Add cache
+  cpp:
+    <<: *defaults
     steps:
       - checkout
+      - run: *third_party
       - run:
-          name: Third Party
+          name: C++
           command: |
-            mkdir -p third_party
-            cd third_party
-            rm -rf conan-vscodepropertiesgen
-            git clone https://github.com/mkovalchik/conan-vscodepropertiesgen.git
-            cd conan-vscodepropertiesgen
-            conan export . vscodepropertiesgen/0.1@mkovalchik/stable
-      # - run:
-      #     name: C++
-      #     command: |
-      #       cd cpp
-      #       mkdir -p build
-      #       cd build
+            cd cpp
+            mkdir -p build
+            cd build
 
-      #       conan install .. --build=outdated
-      #       cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
-      #       make test
-      #       bin/test
+            conan install .. --build=outdated
+            cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+            make test
+            bin/test
+  R:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: *third_party
       - run:
           name: R
           command: |
             cd ./R
-            # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
             R CMD INSTALL .
             Rscript -e "example::str_split('hello world')"
             Rscript -e "devtools::test()"
-      # - run:
-      #     name: Python
-      #     command: |
-      #       cd python
-      #       ./setup.py develop
-      #       ./setup.py test
+  python:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: *third_party
+      - run:
+          name: Python
+          command: |
+            cd python
+            ./setup.py develop
+            ./setup.py test
 workflows:
   version: 2
   build_and_test:
     jobs:
+      - cpp
+      - R
       - python
