@@ -6,11 +6,12 @@ cd build
 
 conan install ../src/lib --build=outdated
 
-VERBOSE=1 cmake .. \
-  -DCMAKE_BUILD_TYPE=Debug \
-  -DCMAKE_INSTALL_PREFIX=_install \
-  -DCMAKE_SHARED_LIBRARY_PREFIX_CXX=""
-cmake --build .. --target install
+cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+#VERBOSE=1 cmake .. \
+#  -DCMAKE_BUILD_TYPE=Debug \
+#  -DCMAKE_INSTALL_PREFIX=_install \
+#  -DCMAKE_SHARED_LIBRARY_PREFIX_CXX=""
+make install
 
 # Linux
 cp _install/dynlib/dynlib.so ../src/example.so || echo "Failed: dynlib.so -> src"
