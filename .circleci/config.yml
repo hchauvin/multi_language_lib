@@ -37,6 +37,8 @@ jobs:
           name: Python
           command: |
             cd python
+            python3.6 -m pip install virtualenv
+            python3.6 -m virtualenv env
             ./setup.py develop
             ./setup.py test
 workflows:
