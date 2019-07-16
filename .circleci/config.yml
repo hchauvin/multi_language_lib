@@ -1,8 +1,8 @@
 version: 2
 jobs:
-  build_and_test:
+  python:
     docker:
-      - image: hchauvin/multi-language-lib-build-env
+      - image: python:3.8.0b2-buster # hchauvin/multi-language-lib-build-env
     # TODO: Add cache
     steps:
       - checkout
@@ -37,12 +37,10 @@ jobs:
           name: Python
           command: |
             cd python
-            python3.6 -m pip install virtualenv
-            python3.6 -m virtualenv env
             ./setup.py develop
             ./setup.py test
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build_and_test
+      - python
