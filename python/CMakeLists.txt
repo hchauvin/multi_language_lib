@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(python_example)
 
-add_subdirectory(src/example/lib)
+include(${CMAKE_CURRENT_LIST_DIR}/src/example/lib/CMakeLists.txt)
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/src/example)
 
