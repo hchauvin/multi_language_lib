@@ -30,9 +30,10 @@ jobs:
       - run:
           name: R
           command: |
-            cd R
+            cd ./R
             # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
             mkdir -p _lib
+            R --version
             R CMD install . --library=./_lib
             # Rscript -e "devtools::load_all(); example::str_split('hello world')"
             # Rscript -e "devtools::test()"
