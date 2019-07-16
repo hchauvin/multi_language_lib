@@ -9,6 +9,7 @@
 [requires]
     boost/1.Y.Z
     catch2/2.Y.Z
+    pybind11/2.Y.Z
     vscodepropertiesgen/0.1
 
 [options]
@@ -28,6 +29,7 @@
     boost/1.67.0@conan/stable:411d816e9b8d6cb0bb1ef6e5be8b2a94b8b17c04
     bzip2/1.0.6@conan/stable:534dcc368c999e07e81f146b3466b8f656ef1f55
     catch2/2.4.2@bincrafters/stable:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
+    pybind11/2.3.0@conan/stable:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
     vscodepropertiesgen/0.1@mkovalchik/stable:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
     zlib/1.2.11@conan/stable:534dcc368c999e07e81f146b3466b8f656ef1f55
 
