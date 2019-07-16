@@ -32,8 +32,9 @@ jobs:
           command: |
             cd R
             # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
-            Rscript -e "devtools::load_all(); example::str_split('hello world')"
-            Rscript -e "devtools::test()"
+            R CMD build
+            # Rscript -e "devtools::load_all(); example::str_split('hello world')"
+            # Rscript -e "devtools::test()"
       # - run:
       #     name: Python
       #     command: |
