@@ -66,7 +66,7 @@ class CMakeBuild(build_ext):
             self.distribution.get_version())
         if not os.path.exists(self.build_temp):
             os.makedirs(self.build_temp)
-        subprocess.check_call(['conan', 'install', os.path.join(ext.sourcedir, 'src/example/lib')], cwd=self.build_temp)
+        subprocess.check_call(['conan', 'install', os.path.join(ext.sourcedir, 'src/example/lib'), '--build=outdated'], cwd=self.build_temp)
         subprocess.check_call(['cmake', ext.sourcedir] + cmake_args, env=env, cwd=self.build_temp)
         subprocess.check_call(['cmake', '--build', '.', '--target', 'example'] + build_args, cwd=self.build_temp)
         for file_name in os.listdir(os.path.join(self.build_temp, 'lib')):
