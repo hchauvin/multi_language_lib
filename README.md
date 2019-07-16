@@ -20,7 +20,7 @@ TODO:
 - / If conan not available, install conan
 - (Try this on Windows)
 - / Implement CI/CD for C++
-- Package the C++ library with conan.
+- / Package the C++ library with conan.
 - Readme instructions
 - Write an article to show how to build a continuum like that. Say that it comes
   from the realization that there are a lot of cool packages in R, such as stuff around
