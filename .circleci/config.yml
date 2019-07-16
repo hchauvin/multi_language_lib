@@ -25,7 +25,7 @@ jobs:
 
             conan install .. --build=outdated
             cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
-            cmake --build .. --target test
+            make test
             bin/test
       # - run:
       #     name: R
