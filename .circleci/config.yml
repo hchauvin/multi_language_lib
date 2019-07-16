@@ -33,8 +33,8 @@ jobs:
             cd R
             # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
             ./configure
-            R -e "devtools::clean_dll(); devtools::load_all(); example::str_split('hello world')"
-            R -e "devtools::test()"
+            Rscript -e "devtools::clean_dll(); devtools::load_all(); example::str_split('hello world')"
+            Rscript -e "devtools::test()"
       # - run:
       #     name: Python
       #     command: |
