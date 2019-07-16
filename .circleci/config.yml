@@ -37,6 +37,7 @@ jobs:
           name: Python
           command: |
             cd python
+            pip install pybind11==2.3.0
             ./setup.py develop
             ./setup.py test
 workflows:
