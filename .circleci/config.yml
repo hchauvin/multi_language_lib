@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Third Party
           command: |
+            pip3 install --upgrade conan
             mkdir -p third_party
             cd third_party
             rm -rf conan-vscodepropertiesgen
