@@ -90,4 +90,5 @@ setup(
     cmdclass=dict(build_ext=CMakeBuild),
     test_suite='tests',
     zip_safe=False,
+    install_requires=['pybind11==2.3.0'],
 )
