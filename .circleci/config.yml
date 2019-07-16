@@ -26,13 +26,13 @@ jobs:
       #       cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
       #       cmake --build .. --target test
       #       bin/test
-      - run:
-          name: R
-          command: |
-            cd R
-            # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
-            R -e "devtools::load_all(); example::str_split('hello world')"
-            R -e "devtools::test()"
+      # - run:
+      #     name: R
+      #     command: |
+      #       cd R
+      #       # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
+      #       R -e "devtools::load_all(); example::str_split('hello world')"
+      #       R -e "devtools::test()"
       - run:
           name: Python
           command: |
