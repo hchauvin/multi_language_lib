@@ -32,7 +32,7 @@ jobs:
           command: |
             cd R
             # TODO: No sudo (https://stackoverflow.com/questions/32540919/library-is-not-writable)
-            R CMD build
+            R CMD build .
             # Rscript -e "devtools::load_all(); example::str_split('hello world')"
             # Rscript -e "devtools::test()"
       # - run:
