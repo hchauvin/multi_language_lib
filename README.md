@@ -1,4 +1,4 @@
-# multi_language_lib
+# C++-first Data Science Library Example
 
 This project showcases how reusable C++ code can be shared between R and Python, the two
 main statistical/machine learning languages. It showcases how package management could be done
